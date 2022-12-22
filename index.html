@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <link rel="stylesheet" href="css/style.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>lesson_24</title>
+</head>
+<body>
+   <div class="wrapper">
+      <header class="header"></header>
+      <main class="page">
+         <div class="page__container">
+            <h1>Домашка №24</h1>
+            <div class="lesson">
+               <h3>Урок №8. Функции в JavaScript</h3>
+               <div class="tsak">
+                  <p>
+                     <span>Задача №1.</span>
+                     Кто попадёт в консоль первым Вася или Коля?
+                  </p>
+                  <p>
+                     Первым в консоль попадёт "Коля!"" т.к. 
+                     нулевая задержка не даёт гарантии, что 
+                     обработчик выполнится через ноль миллисекунд. 
+                     Вызов setTimeout с аргументом 0 (ноль) не 
+                     завершится за указанное время. Выполнение 
+                     зависит от количества ожидающих задач в очереди.
+                  </p>
+               </div>
+               <div class="task">
+                  <p>
+                     <span>Задача №2.</span>
+                     Верно ли вызвана функция?
+                  </p>
+                  <p>
+                     Функция showMessage вызвана верно т.к. 
+                     записанная таким образом функция может
+                     быть вызвана в любом месте программы
+                     в отличии от функционального выражения.
+                  </p>
+               </div>
+               <div class="task">
+                  <p>
+                     <span>Задача №3.</span>
+                     Верно ли вызвана функция?
+                  </p>
+                  <p>
+                     Функция showMessage вызвана неверно т.к.
+                     функция записана в виде функционального 
+                     выражения и может быть вызвана только 
+                     после этого выражения.
+                  </p>
+               </div>
+               <div class="task">
+                  <p>
+                     <span>Задача №4.</span>
+                     Как решть проблему?
+                  </p>
+                  <p>
+                     Нужно создать глобальную пременную showMessage и 
+                     присвоить ей функцию т.е. создать 
+                     функциональное выражение.
+                  </p>
+               </div>
+            </div>
+            <div class="lesson">
+               <h3>Урок №12. Массивы в JavaScript</h3>
+               <div class="task">
+                  <p>
+                     <span>Задача №1.</span>
+                     Каое число (длинну) мы получим?
+                  </p>
+                  <p>
+                     Получим число (длинну) четыре т.к. 
+                     в пременной newArr содержится копия массива
+                     arr, все изменения ктороые будут происходить
+                     с копией перенесутся и на объект arr.  
+                  </p>
+               </div>
+               <div class="task">
+                  <p>
+                     <span>Задача №2</span>
+                  </p>
+                  <p>
+                     cоздайте массив users с элементами "Ваня" и "Иштван"
+                  </p>
+                  <p>
+                     <code>
+                        let users = ["Ваня", "Иштван"];
+                     </code>
+                  </p>
+                  <p>добавте "Оля" в конец</p>
+                  <p>
+                     <code>users.push("Оля");</code>
+                  </p>
+                  <p>
+                     замените значение "Иштван" на "Петя", код для поиска должен работать с любой длинной
+                  </p>
+                  <p>
+                     <code>
+                        let index = users.indexOf('Иштван');<br>
+                        console.log(index);<br>
+                        if (index >= 0) {<br>
+                           users.splice(index, 1, "Петя");<br>
+                           console.log(users);<br>
+                        } else {<br>
+                           console.log("Элемент не найден");<br>
+                        }
+                     </code>
+                  </p>
+                  <p>удалите первый элемент массива и покажите его</p>
+                  <p>
+                     <code>
+                        let removed = users.splice(1, 1);<br>
+                        console.log(removed);
+                     </code>
+                  </p>
+                  <p>вставьте "Маша" и "Паша" в начало массива</p>
+                  <p>
+                     <code>
+                        users.unshift("Маша", "Паша");<br>
+                        console.log(users);
+                     </code>
+                  </p>
+               </div>
+               <div class="task">
+                  <p>
+                     <span>Задача №3.</span> 
+                     Удалить элемент "Иштван" и вернуть его в переменную
+                  </p>
+                  <p>
+                     <code>
+                        let arr = ["Иштван", "Ваня", "Максим", "Оля", "Петя"];<br>
+                        let element = arr.indexOf('Иштван');<br>
+                        let removedElement;<br>
+                        console.log(element);<br>
+                        if (element >= 0) {<br>
+                           removedElement = arr.splice(element, 1);<br>
+                           console.log(`Удалённый элемент: ${removedElement}`);<br>
+                        } else {<br>
+                           console.log("Элемент не найден");<br>
+                        }
+                     </code>
+                  </p>
+               </div>
+               <div class="task">
+                  <p>
+                     <span>Задача №4.</span> Сделать из строки массив
+                  </p>
+                  <p>
+                     <code>
+                        let str = "Ваня,Иштван,Оля,Давид";<br>
+                        let strArr = str.split(',');<br>
+                        console.log(strArr);
+                     </code>
+                  </p>
+               </div>
+               <div class="task">
+                  <p>
+                     <span>Задача №5.</span> Чему равен previosValue в начале работы метода?
+                  </p>
+                  <p>
+                     previosValue в начале работы метода будет равен 9 
+                     но сам метод не сработает т.к. он должен возвращать
+                     значение (return) а сам previosValue должен хранить
+                     результат каких то промежуточных вычислений
+                  </p>
+               </div>
+            </div>
+            <div class="lesson">
+               <h3>Урок №13. Браузерное окружение. Работа с DOM.</h3>
+               <div class="display-none">
+                  <div data-say-hi="yes">Привет!</div>
+                  <!-- <ul>
+                     <li>Корчи</li>
+                     <li>Йончи</li>
+                  </ul> -->
+                  <div class="like"></div>
+                  <div class="subscribe"></div>
+                  <div class="like subscribe"></div>
+                  <ul>
+                     <li>Пункт №1</li>
+                     <li>Пункт №2</li>
+                  </ul>
+               </div>
+               <div class="task">
+                  <p>
+                     <span>Задача №1.</span>
+                     Получить в переменную элемент с атрибутом data-say-hi
+                     и прочитать значение этого атрибута
+                  </p>
+                  <img src="img/01.jpg" alt="image">
+                  <p>
+                     <code>
+                        let lessonText = document.querySelector('[data-say-hi]');<br>
+                        let dataValue = lessonText.getAttribute('data-say-hi');<br>
+                        console.log(dataValue);
+                     </code>
+                  </p>
+               </div>
+               <div class="task">
+                  <p>
+                     <span>Задача №2</span>
+                     Получить в переменную элемент с текстом Йончи
+                  </p>
+                  <img class="image2" src="img/02.jpg" alt="image">
+                  <p>
+                     <code>
+                        let textElementContent;<br>
+                        const textElement = document.querySelectorAll('li');<br>
+                        for (const item of textElement) {<br>
+                           if (item.textContent == "Йончи") {<br>
+                              textElementContent = item;<br>
+                           } <br>
+                        }<br>
+                        console.log(textElementContent.textContent);
+                     </code>
+                  </p>
+               </div>
+               <div class="task">
+                  <p>
+                     <span>Задача №3</span>
+                     Получить в переменную коллекцию элементов с классом like
+                  </p>
+                  <img src="img/03.jpg" alt="image">
+                  <p>
+                     <code>
+                        let elems = document.querySelectorAll('.like');<br>
+                        for (let item of elems) {<br>
+                           console.log(item);<br>
+                        }
+                     </code>
+                  </p>
+               </div>
+               <div class="task">
+                  <p>
+                     <span>Задача №4</span>
+                     Куда добавится <img src="img/04.jpg" alt=""> ?
+                  </p>
+                  <div>
+                     <img src="img/05.jpg" alt="">
+                  </div>
+                  <p>
+                     Если применить querySelector или 
+                     обратиться к ul как к list[0]
+                     то Текст добавится в конце объекта list
+                  </p>
+                  <img src="img/06.jpg" alt="">
+               </div>
+            </div>
+            <div class="lesson">
+               <h3>Урок №14. Размеры, прокрутка, координаты</h3>
+               <div class="task">
+                  <p>
+                     <span>Задача №1</span>
+                     Узнать ширину полосы прокрутки
+                  </p>
+                  <p>
+                     <code>
+                        const mainElement = document.documentElement;<br>
+                        const mainElementWidth = mainElement.clientWidth;<br>
+                        console.log(`Доступная ширина окна: ${mainElementWidth}px`);<br>
+                        const windowWidth = window.innerWidth;<br>
+                        console.log(`Ширина окна вместе с полосой прокрутки: ${windowWidth}px`);<br>
+                        let lineScrollWidth = windowWidth - mainElementWidth;<br>
+                        console.log(`Ширина полосы прокрутки: ${lineScrollWidth}px`);
+                     </code>
+                  </p>
+               </div>
+               <div class="task">
+                  <p>
+                     <span>Задача №2.</span>
+                     Заставьте браузер прокрутиться на 100px сверху
+                     спустя секунду после открытия страницы
+                  </p>
+                  <p>
+                     <code>
+                        function setScrollTo() {<br>
+                           window.scrollTo(0, 100);<br>
+                           const windowScrollTop = window.pageYOffset;<br>
+                           console.log(`Скрол на ${windowScrollTop}px`);<br>
+                        }<br>
+                        setTimeout(setScrollTo, 1000);
+                     </code>
+                  </p>
+               </div>
+               <div class="task">
+                  <p>
+                     <span>Задача №3.</span>
+                     Получите координаты любых трёх элементов на странице
+                  </p>
+                  <p>
+                     <code>
+                        const title = document.querySelector('h1');<br>
+                        const getTitleCoord = title.getBoundingClientRect();<br>
+                        console.log(getTitleCoord);<br>
+
+                        const displayNone = document.querySelector('.display-none');<br>
+                        const getDisplayNoneCoord = displayNone.getBoundingClientRect();<br>
+                        console.log(getDisplayNoneCoord);<br>
+
+                        const image2 = document.querySelector('.image2');<br>
+                        const getImage2TopCoord = image2.getBoundingClientRect().top;<br>
+                        const getImage2TopDocumentCoord = getImage2TopCoord + window.pageYOffset;<br>
+                        console.log(getImage2TopDocumentCoord);<br>
+                     </code>
+                  </p>
+               </div>
+            </div>
+         </div>         
+      </main>
+      <footer class="footer"></footer>
+   </div>
+   <script src="js/script.js"></script>
+</body>
+</html>
